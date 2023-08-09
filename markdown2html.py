@@ -47,7 +47,6 @@ if __name__ == "__main__":
         """
         fun_dic = {
             '#': headings,
-            '-': un_list
         }
 
         aux = []

@@ -10,12 +10,12 @@ if __name__ == "__main__":
     def un_list(lines):
         """ Gives a ul tags to lines and wraps with <ul> """
 
-        wrap = ["<ul>   \n",]
+        wrap = ["<ul>\n",]
 
         for item in lines:
             text = item.replace('-', '')
             text.strip()
-            wrap.append(f"  <li>{text.strip()}</li>\n")
+            wrap.append(f"<li>{text.strip()}</li>\n")
 
         wrap.append("</ul>\n")
 

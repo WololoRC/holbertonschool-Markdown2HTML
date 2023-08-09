@@ -47,13 +47,18 @@ if __name__ == "__main__":
         """
         fun_dic = {
             '#': headings,
+            '-': un_list
         }
 
         aux = []
         render = []
 
-        with open(f"{src}", 'r', encoding='utf-8') as file:
-            content = file.read()
+        try:
+            with open(f"{src}", 'r', encoding='utf-8') as file:
+                content = file.read()
+        except FileNotFoundError:
+            sys.stderr.write(f"Missing {src}\n")
+            sys.exit(1)
 
         for mark in fun_dic:
             aux.clear()
@@ -67,6 +72,7 @@ if __name__ == "__main__":
                 to_html.write("".join(line))
 
     if len(sys.argv) < 3:
+        sys.stderr.write('Usage: ./markdown2html.py README.md README.html\n')
         sys.exit(1)
 
     elif sys.argv[1].endswith('.md'):
@@ -74,4 +80,4 @@ if __name__ == "__main__":
         sys.exit()
 
     else:
-        sys.exit(1)
+        sys.exit(0)

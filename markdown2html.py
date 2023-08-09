@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import sys
 """
 Parse a Markdown file and turns into HTML
 """
+import sys
 
 
 if __name__ == "__main__":
